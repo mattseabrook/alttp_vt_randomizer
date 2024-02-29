@@ -146,3 +146,28 @@ docker build -t alttp-randomizer .
 Copy code
 docker run -d -p 9000:9000 -p 9001:9001 --name alttp-randomizer-app alttp-randomizer
 ```
+
+## Docker Post Install
+
+```Dockerfile
+# Install NPM dependencies and build assets
+RUN npm install && npm run production
+
+# Copy the .env.example file to .env and setup the application
+RUN cp .env.example .env \
+    && sed -i 's/DB_CONNECTION=mysql/DB_CONNECTION=sqlite/g' .env \
+    && sed -i 's/DB_DATABASE=homestead/DB_DATABASE=\/var\/www\/html\/database\/database.sqlite/g' .env \
+    && touch database/database.sqlite
+
+# Generate key and cache configuration
+RUN php artisan key:generate && php artisan config:cache
+
+# Run database migrations
+RUN php artisan migrate
+
+# Permissions adjustment, to ensure that the web server can access the necessary files
+RUN chown -R www-data:www-data /var/www/html && find /var/www/html -type d -exec chmod 755 {} \; && find /var/www/html -type f -exec chmod 644 {} \;
+
+# When the container starts, serve the application via Apache in the foreground
+CMD ["apache2-foreground"]
+```
