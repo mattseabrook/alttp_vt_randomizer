@@ -128,3 +128,21 @@ $ phpunit
 Bug reports for the current release version can be opened in this repository's [issue tracker](https://github.com/sporchia/alttp_vt_randomizer/issues).
 
 Please do not open issues for bugs that you encounter when testing a development branch.
+
+# Seabrook
+
+Instructions for Use
+
+## Build the Docker Image
+
+```sh
+Copy code
+docker build -t alttp-randomizer .
+```
+
+## Run the Docker Container
+
+```sh
+Copy code
+docker run -d -p 9000:9000 -p 9001:9001 --name alttp-randomizer-app alttp-randomizer
+```
