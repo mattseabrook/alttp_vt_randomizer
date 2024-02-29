@@ -212,3 +212,41 @@ Updates:
  vuex                       ^3.4.0  →    ^4.1.0
  webpack-bundle-analyzer    ^3.8.0  →   ^4.10.1
  ```
+
+ ## NPM Audit
+
+ ```bash
+ npm ERR! code ERESOLVE
+npm ERR! ERESOLVE could not resolve
+npm ERR!
+npm ERR! While resolving: vue-js-toggle-button@1.3.3
+npm ERR! Found: vue@3.4.21
+npm ERR! node_modules/vue
+npm ERR!   dev vue@"^3.4.21" from the root project
+npm ERR!   peer vue@"3.4.21" from @vue/server-renderer@3.4.21
+npm ERR!   node_modules/@vue/server-renderer
+npm ERR!     @vue/server-renderer@"3.4.21" from vue@3.4.21
+npm ERR!   3 more (vue-i18n, vue-property-decorator, vuex)
+npm ERR!
+npm ERR! Could not resolve dependency:
+npm ERR! peer vue@"^2.0.0" from vue-js-toggle-button@1.3.3
+npm ERR! node_modules/vue-js-toggle-button
+npm ERR!   vue-js-toggle-button@"^1.3.3" from the root project
+npm ERR!
+npm ERR! Conflicting peer dependency: vue@2.7.16
+npm ERR! node_modules/vue
+npm ERR!   peer vue@"^2.0.0" from vue-js-toggle-button@1.3.3
+npm ERR!   node_modules/vue-js-toggle-button
+npm ERR!     vue-js-toggle-button@"^1.3.3" from the root project
+npm ERR!
+npm ERR! Fix the upstream dependency conflict, or retry
+npm ERR! this command with --force or --legacy-peer-deps
+npm ERR! to accept an incorrect (and potentially broken) dependency resolution.
+npm ERR!
+npm ERR!
+npm ERR! For a full report see:
+npm ERR! /root/.npm/_logs/2024-02-29T03_52_04_220Z-eresolve-report.txt
+
+npm ERR! A complete log of this run can be found in:
+npm ERR!     /root/.npm/_logs/2024-02-29T03_52_04_220Z-debug-0.log
+```

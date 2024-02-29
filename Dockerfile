@@ -1,9 +1,8 @@
 # Use an official PHP 8.1 runtime as a parent image with Apache
 FROM php:8.1-apache
 
-# Change Apache Listen port to 9000
-RUN sed -i '/Listen 80/c\Listen 9000' /etc/apache2/ports.conf
-EXPOSE 9000
+# Expose the port that the app will listen on
+EXPOSE 8000
 
 # Install system dependencies, PHP extensions required by Laravel and the randomizer project, Composer, and SQLite
 RUN apt-get update && apt-get install -y \
@@ -28,9 +27,10 @@ RUN pecl install xdebug \
     && echo "xdebug.mode=debug" >> /usr/local/etc/php/conf.d/docker-php-ext-xdebug.ini \
     && echo "xdebug.start_with_request=yes" >> /usr/local/etc/php/conf.d/docker-php-ext-xdebug.ini \
     && echo "xdebug.client_host=host.docker.internal" >> /usr/local/etc/php/conf.d/docker-php-ext-xdebug.ini \
-    && echo "xdebug.client_port=9001" >> /usr/local/etc/php/conf.d/docker-php-ext-xdebug.ini \
+    && echo "xdebug.client_port=8001" >> /usr/local/etc/php/conf.d/docker-php-ext-xdebug.ini \
     && echo "xdebug.log=/var/www/html/xdebug.log" >> /usr/local/etc/php/conf.d/docker-php-ext-xdebug.ini
 
+# Expose the Xdebug port
 EXPOSE 9001
 
 # Enable Apache mod_rewrite for clean URLs
