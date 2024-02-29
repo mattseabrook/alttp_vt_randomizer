@@ -171,3 +171,44 @@ RUN chown -R www-data:www-data /var/www/html && find /var/www/html -type d -exec
 # When the container starts, serve the application via Apache in the foreground
 CMD ["apache2-foreground"]
 ```
+
+## NPM Dependencies
+
+Updates:
+
+```bash
+[====================] 41/41 100%
+
+ @babel/core               ^7.10.3  →   ^7.24.0
+ @babel/preset-env         ^7.10.3  →   ^7.24.0
+ @sentry/browser           ^5.18.1  →  ^7.103.0
+ ajv                       ^6.12.2  →   ^8.12.0
+ axios                     ^0.21.4  →    ^1.6.7
+ axios-mock-adapter        ^1.18.1  →   ^1.22.0
+ bootstrap                  ^4.5.0  →    ^5.3.3
+ cross-env                  ^7.0.2  →    ^7.0.3
+ date-fns                  ^2.14.0  →    ^3.3.1
+ eslint                     ^6.8.0  →   ^8.57.0
+ eslint-plugin-jest       ^23.17.1  →   ^27.9.0
+ eslint-plugin-vue          ^6.2.2  →   ^9.22.0
+ file-saver                 ^2.0.2  →    ^2.0.5
+ jquery                     ^3.5.1  →    ^3.7.1
+ laravel-mix                ^5.0.4  →   ^6.0.49
+ localforage                ^1.7.4  →   ^1.10.0
+ prando                     ^5.1.2  →    ^6.0.1
+ resolve-url-loader         ^3.1.1  →    ^5.0.0
+ sass                      ^1.26.9  →   ^1.71.1
+ sass-loader                ^8.0.2  →   ^14.1.1
+ spark-md5                  ^3.0.1  →    ^3.0.2
+ ts-loader                  ^6.2.2  →    ^9.5.1
+ typescript                 ^3.9.5  →    ^5.3.3
+ v-tooltip                  ^2.0.3  →    ^2.1.3
+ vue                       ^2.6.11  →   ^3.4.21
+ vue-i18n                  ^8.18.2  →    ^9.9.1
+ vue-multiselect            ^2.1.6  →    ^2.1.9
+ vue-slider-component       ^3.1.5  →   ^3.2.24
+ vue-template-compiler     ^2.6.11  →   ^2.7.16
+ vue-timeago                ^5.1.2  →    ^5.1.3
+ vuex                       ^3.4.0  →    ^4.1.0
+ webpack-bundle-analyzer    ^3.8.0  →   ^4.10.1
+ ```
